@@ -1,22 +1,22 @@
-function changeButtomsText(n) {
-  
-  const createButton = () => {
-    for (let i = 1; i <= n; i++) {
-      const body = document.querySelector("body");
-      const button = document.createElement("button");
-      button.innerText = `${i} botón`;
-
-      button.onmouseover = () => {
-        button.innerText = `${i} botóN`;
-      };
-      button.onmouseout = () => {
-        button.innerText = `${i} botón`;
-      };
-
-      body.appendChild(button);
-    }
-  };
-  createButton();
+function duplicateButtomswithHoverEffect(n) {
+  for (let i = 1; i <= n; i++) {
+    createButtonWithHoverEffect(i);
+  }
 }
 
-changeButtomsText(1000);
+const createButtonWithHoverEffect = (i) => {
+  const defaultText = `${i} botón`;
+  const body = document.querySelector("body");
+  const button = document.createElement("button");
+  button.innerText = defaultText;
+  button.onmouseover = () => {
+    button.innerText = `${i} botóN`;
+  };
+  button.onmouseout = () => {
+    button.innerText = defaultText;
+  };
+
+  body.appendChild(button);
+};
+
+duplicateButtomswithHoverEffect(1000);
