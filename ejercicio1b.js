@@ -1,7 +1,8 @@
-function createButton() {
+function createButtonWithHoverEffect() {
   const body = document.querySelector("body");
   const button = document.createElement("button");
-  button.innerText = "1 botón";
+  const defaultText = "1 botón";
+  button.innerText = defaultText;
 
   body.appendChild(button);
 
@@ -9,7 +10,7 @@ function createButton() {
     button.innerText = "1 botóN";
   };
   button.onmouseout = () => {
-    button.innerText = "1 botón";
+    button.innerText = defaultText;
   };
 }
-createButton();
+createButtonWithHoverEffect();
