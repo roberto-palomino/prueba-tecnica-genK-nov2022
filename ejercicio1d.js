@@ -12,4 +12,4 @@ function duplicateButtoms(n) {
   createButton();
 }
 
-duplicateButtoms(10);
+duplicateButtoms(1000);
