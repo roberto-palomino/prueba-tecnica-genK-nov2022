@@ -11,20 +11,11 @@ const array2 = [
 ];
 
 const result = [];
-const columnsArray2 = [];
-const array1FilesValue = [];
-const array2ColumnsValue = [];
+const array2Columns = [];
+const flatArray1Rows = [];
+const flatArray2Columns = [];
 
-function Array1Elements(arr) {
-  for (const element of arr) {
-    for (const value of element) {
-      array1FilesValue.push(value);
-    }
-  }
-}
-Array1Elements(array1);
-
-function clasifiedArrayColumns(arr) {
+function clasifyArrayColumns(arr) {
   const column1Array2 = [];
   const column2Array2 = [];
   const column3Array2 = [];
@@ -44,18 +35,16 @@ function clasifiedArrayColumns(arr) {
       }
     }
   }
-  columnsArray2.push(column1Array2, column2Array2, column3Array2);
+  array2Columns.push(column1Array2, column2Array2, column3Array2);
 }
-clasifiedArrayColumns(array2);
 
-function Array2ElementsValue(arr) {
+function flatArray(arr, finalArray) {
   for (const element of arr) {
     for (const value of element) {
-      array2ColumnsValue.push(value);
+      finalArray.push(value);
     }
   }
 }
-Array2ElementsValue(array2);
 
 function multiplyArrayValues(a, b) {
   for (let i = 0; i < Math.max(a.length, b.length); i++) {
@@ -63,4 +52,10 @@ function multiplyArrayValues(a, b) {
   }
   return result;
 }
-multiplyArrayValues(array1FilesValue, array2ColumnsValue);
+
+clasifyArrayColumns(array2);
+flatArray(array1, flatArray1Rows);
+flatArray(array2Columns, flatArray2Columns);
+multiplyArrayValues(flatArray1Rows, flatArray2Columns);
+
+console.log("resultado:", result);
