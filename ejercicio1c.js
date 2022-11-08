@@ -12,3 +12,15 @@ function duplicateButtoms(n) {
   }
 }
 duplicateButtoms(10);
+
+// Solución de Kairos:
+
+const boton = document.createElement("button");
+boton.textContent = "1 botón";
+document.body.appendChild(boton);
+
+for (let contadorBotones = 1; contadorBotones <= 10; contadorBotones += 1) {
+  const boton = document.createElement("button");
+  boton.textContent = `${contadorBotones} botón`;
+  document.body.appendChild(boton);
+}
