@@ -75,3 +75,28 @@ multiplyArrayValues(flatArray1Rows, flatArray2Columns);
 transformNumbersToString(result);
 
 console.log("Formated array result", resultArrayToString);
+
+// Solución de Kairos:
+
+const result2 = [
+  [0, 0, 0],
+  [0, 0, 0],
+  [0, 0, 0],
+];
+
+for (let rowArr1 = 0; rowArr1 < array1.length; rowArr1 += 1) {
+  for (let colArr1 = 0; colArr1 < array1[rowArr1].length; colArr1 += 1) {
+    result2[rowArr1][colArr1] =
+      array1[rowArr1][colArr1] * array2[colArr1][rowArr1];
+  }
+}
+
+const resultFormated = [];
+for (const value of result2) {
+  for (const element of value) {
+    let text = element.toLocaleString();
+    let res = text.padStart(3, "0");
+    resultFormated.push(res);
+  }
+}
+console.log("Array con solución Kairos:", resultFormated);
